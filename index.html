@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bin2Dec</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+</head>
+
+<body class="bg-blue-800 text-gray-800 py-16">
+
+    <div class="container mx-auto px-4" id="AppVue">
+
+        <h1 class="text-4xl text-center mb-16 text-white">Conversor para Números Binários</h1>
+
+        <!-- row -->
+        <div class="flex flex-col -mx-4 sm:flex-row">
+
+            <!-- col -->
+            <div class="flex-1 mb-4 mx-4">
+
+                <!-- card -->
+                <div class="bg-white rounded overflow-hidden shadow-lg p-4">
+                    <h2 class="font-bold text-xl text-center mb-4">Binário para Decimal</h2>
+
+                    <table class="table-auto">
+                        <tbody>
+                            <tr>
+                                <td class="px-4 py-2 align-top text-right">Binário</td>
+                                <td class="px-4 py-2 align-top text-left">
+                                    <div class="form-group" :class="{'has-error': bin2dec.bin.error}">
+                                        <input type="number"
+                                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            v-model="bin2dec.bin.value"
+                                            :class="{'border-red-500 bg-red-200': bin2dec.bin.error}">
+                                        <small class="text-red-500">{{bin2dec.bin.error}}</small>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 align-top text-right">Decimal</td>
+                                <td class="px-4 py-2 align-top text-left">
+                                    <div class="form-group">
+                                        <input type="text"
+                                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-30012"
+                                            v-model="bin2dec.dec" readonly>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /card -->
+
+            </div>
+            <!-- /col -->
+
+            <!-- col -->
+            <div class="flex-1 mb-4 mx-4">
+
+                <!-- card -->
+                <div class="bg-white rounded overflow-hidden shadow-lg p-4">
+                    <h2 class="font-bold text-xl text-center mb-4">Decimal para Binário</h2>
+
+                    <table class="table-auto">
+                        <tbody>
+                            <tr>
+                                <td class="px-4 py-2 align-top text-right">Decimal</td>
+                                <td class="px-4 py-2 align-top text-left">
+                                    <div class="form-group" :class="{'has-error': dec2bin.dec.error}">
+                                        <input type="number"
+                                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            v-model="dec2bin.dec.value"
+                                            :class="{'border-red-500 bg-red-200': dec2bin.dec.error}">
+                                        <small class="text-red-500">{{dec2bin.dec.error}}</small>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 align-top text-right">Binário</td>
+                                <td class="px-4 py-2 align-top text-left">
+                                    <div class="form-group">
+                                        <input type="text"
+                                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-30012"
+                                            v-model="dec2bin.bin" readonly>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /card -->
+
+            </div>
+            <!-- /col -->
+
+        </div>
+        <!-- /row -->
+
+        <footer class="fixed bottom-0 left-0 w-full py-2 bg-blue-900 text-white text-sm text-center">
+            <div class="container mx-auto">
+                Desenvolvido por <a href="http://leandromacedo.dev" class="underline">Leandro Macedo</a>.
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
